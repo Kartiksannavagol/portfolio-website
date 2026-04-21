@@ -122,7 +122,7 @@ const Projects = () => {
           <p className={`text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            Here are some of my recent data science and machine learning projects that showcase my skills in building intelligent systems and deriving insights from complex datasets.
+            Here are some of my recent full-stack and frontend projects showcasing my ability to build responsive web applications, interactive dashboards, and seamless user experiences.
           </p>
         </div>
 

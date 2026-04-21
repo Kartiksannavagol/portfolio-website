@@ -8,10 +8,10 @@ const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
 
   const roles = [
-    "CS Engineering Student",
-    "Aspiring Data Scientist", 
-    "AI/ML Enthusiast",
-    "Web Developer"
+    "Frontend-Focused Full Stack Developer",
+    "Crafting Modern UI with React & Tailwind",
+    "Building Real-Time Dashboards & Web Apps",
+    "Passionate About Clean UI & Performance"
   ];
 
   useEffect(() => {
