@@ -105,37 +105,75 @@ const About = () => {
           </div>
         </div>
 
-        {/* Skills Section */}
-        <div className={`transform transition-all duration-1000 delay-600 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <h3 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Technical Skills
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mockData.skills.map((skill, index) => (
-              <div key={index} className="group">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                      <Code className="h-4 w-4 text-white" />
-                    </div>
-                    <span className="font-medium text-gray-900 dark:text-white">
-                      {skill.name}
-                    </span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    {skill.level}%
-                  </span>
-                </div>
-                <Progress 
-                  value={skillProgress[skill.name] || 0} 
-                  className="h-2 bg-gray-200 dark:bg-gray-700"
-                />
-              </div>
-            ))}
+       {/* Skills Section */}
+<div className={`transform transition-all duration-1000 delay-600 ${
+  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+}`}>
+  <h3 className="text-3xl font-bold text-center mb-3 text-gray-900 dark:text-white">
+    Technical Skills
+  </h3>
+  <div className="w-16 h-1 bg-gradient-to-r from-blue-900 to-emerald-500 mx-auto mb-12 rounded-full" />
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    {[
+      {
+        icon: '⚛️',
+        iconBg: 'bg-blue-50',
+        label: 'Frontend',
+        skills: ['React.js', 'JavaScript (ES6+)', 'HTML5 & CSS3', 'Tailwind CSS', 'Responsive Design']
+      },
+      {
+        icon: '🔧',
+        iconBg: 'bg-emerald-50',
+        label: 'Backend & APIs',
+        skills: ['FastAPI', 'REST API Integration']
+      },
+      {
+        icon: '🗄️',
+        iconBg: 'bg-violet-50',
+        label: 'Databases',
+        skills: ['MongoDB', 'MySQL']
+      },
+      {
+        icon: '🛠️',
+        iconBg: 'bg-amber-50',
+        label: 'Tools',
+        skills: ['Git & GitHub']
+      },
+      {
+        icon: '💻',
+        iconBg: 'bg-red-50',
+        label: 'Languages',
+        skills: ['Python', 'C++']
+      }
+    ].map((cat, i) => (
+      <div
+        key={i}
+        className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <div className={`w-9 h-9 ${cat.iconBg} dark:bg-gray-700 rounded-lg flex items-center justify-center text-base`}>
+            {cat.icon}
           </div>
+          <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+            {cat.label}
+          </span>
         </div>
+        <div className="flex flex-wrap gap-2">
+          {cat.skills.map((skill, j) => (
+            <span
+              key={j}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-blue-900 dark:text-gray-200 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all duration-150"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
         {/* Experience Timeline */}
         <div className={`mt-20 transform transition-all duration-1000 delay-800 ${
